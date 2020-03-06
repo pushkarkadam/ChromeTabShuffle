@@ -43,3 +43,8 @@ url: "https://www.google.com/search?q=cars&rlz=1C1GCEU_en&oq=cars&aqs=chrome..69
 width: 1038
 windowId: 1
 ```
+
+## Trigger page
+
+Introducing the `popup.html` file to use a button.
+There is a shuffle button within this page that should trigger the event to shuffle.
