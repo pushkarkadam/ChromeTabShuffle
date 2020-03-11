@@ -5,6 +5,7 @@ var END_TIME = 16;
 var tabs_array = [];
 var tabs_manifest = [];
 
+
 chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.query({}, function(tabs) {
         console.log(tabs);
@@ -19,6 +20,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
         // Check the hour of the day
         if (hour > START_TIME && hour < END_TIME) {
+            // moves the tabs
             chrome.tabs.move(tabs_manifest[0].id, {index: 0});
             console.log(tabs_manifest[0].index);
             console.log(tabs_manifest[0].url);

@@ -44,7 +44,12 @@ width: 1038
 windowId: 1
 ```
 
-## Trigger page
+## move
 
-Introducing the `popup.html` file to use a button.
-There is a shuffle button within this page that should trigger the event to shuffle.
+The following function enables the tabs to move.
+
+`chrome.tabs.move(integer or array of integer tabIds, object moveProperties, function callback)`
+
+## TODO
+
+* Make sure to use the url to change the tabs.
