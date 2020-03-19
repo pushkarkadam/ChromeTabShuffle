@@ -50,6 +50,31 @@ The following function enables the tabs to move.
 
 `chrome.tabs.move(integer or array of integer tabIds, object moveProperties, function callback)`
 
+## Config File
+
+All the time variables and the url load from a file named `config.js`
+
+Create a `config.js` file.
+
+Create a key value pair.
+
+```
+var config = {
+    "key1": "value1",
+    "key2": "value2"
+}
+```
+
+Use `var config = chrome.extension.getBackgroundPage().config;` to load the file.
+
+In `manifest.json`, make sure to add `config.js` in background script array before `background.js`
+
+```
+"background": {
+    "scripts": ["config.js","background.js"]
+}
+```
+
 ## TODO
 
 * Make sure to use the url to change the tabs.
