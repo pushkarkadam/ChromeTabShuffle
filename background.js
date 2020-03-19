@@ -1,10 +1,15 @@
 var date = new Date();
 var hour = date.getHours()
-var START_TIME = 9;
-var END_TIME = 16;
 var tabs_array = [];
 var tabs_manifest = [];
 
+// Loads config file
+var config = chrome.extension.getBackgroundPage().config;
+
+const START_TIME = config.start_time;
+const END_TIME = config.end_time;
+
+console.log("START: " + START_TIME.toString());
 
 chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.query({}, function(tabs) {

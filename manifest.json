@@ -6,7 +6,7 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["config.js","background.js"]
     },
     "permissions": [
         "tabs"
