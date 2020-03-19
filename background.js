@@ -9,8 +9,6 @@ var config = chrome.extension.getBackgroundPage().config;
 const START_TIME = config.start_time;
 const END_TIME = config.end_time;
 
-console.log("START: " + START_TIME.toString());
-
 chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.query({}, function(tabs) {
         console.log(tabs);
@@ -25,15 +23,21 @@ chrome.runtime.onInstalled.addListener(function() {
 
         // Check the hour of the day
         if (hour > START_TIME && hour < END_TIME) {
-            // moves the tabs
-            chrome.tabs.move(tabs_manifest[0].id, {index: 0});
-            console.log(tabs_manifest[0].index);
-            console.log(tabs_manifest[0].url);
+            // go through the tabs_manifest to find the form link
+            for (var i = 0; i < tabs_manifest.length; i++) {
+                if (tabs_manifest[i].url == config.feedback_link) {
+                    chrome.tabs.move(tabs_manifest[i].id, {index: 0});
+                    console.log(tabs_manifest[i].url);
+                }
+            }
         }
         else {
-            chrome.tabs.move(tabs_manifest[1].id, {index: 0});
-            console.log("Index: " + tabs_manifest[1].index.toString());
-            console.log(tabs_manifest[1].url);
+            // go through the tabs_manifest to find the feedback_link
+            for (var i = 0; i < tabs_manifest.lenght; i++) {
+                if (tabs_manifest[i].url == config.google_form) {
+                    chrome.tabs.move(tabs_manifest[i].id, {index: 0});
+                }
+            }
         }
     });
 });
