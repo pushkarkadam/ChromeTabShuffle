@@ -50,6 +50,10 @@ The following function enables the tabs to move.
 
 `chrome.tabs.move(integer or array of integer tabIds, object moveProperties, function callback)`
 
+The function in the `background.js` is as follows:
+
+`chrome.tabs.move(tabs_manifest[i].id, {index: 0});`
+
 ## Config File
 
 All the time variables and the url load from a file named `config.js`
@@ -74,7 +78,3 @@ In `manifest.json`, make sure to add `config.js` in background script array befo
     "scripts": ["config.js","background.js"]
 }
 ```
-
-## TODO
-
-* Make sure to use the url to change the tabs.
