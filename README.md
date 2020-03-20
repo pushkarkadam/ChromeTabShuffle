@@ -44,7 +44,7 @@ width: 1038
 windowId: 1
 ```
 
-## move
+## Move
 
 The following function enables the tabs to move.
 
@@ -53,6 +53,16 @@ The following function enables the tabs to move.
 The function in the `background.js` is as follows:
 
 `chrome.tabs.move(tabs_manifest[i].id, {index: 0});`
+
+## Highlight
+
+The following function enables the tabs to appear (highlight):
+
+`chrome.tabs.highlight(object highlightInfo, function callback)`
+
+The function in the `background.js` is as follows:
+
+`chrome.tabs.highlight({tabs: tabs_manifest[0].index});`
 
 ## Config File
 
