@@ -19,15 +19,15 @@ chrome.runtime.onInstalled.addListener(function() {
             // go through the tabs_manifest to find the feedback_link
             for (var i = 0; i < tabs_manifest.length; i++) {
                 if (tabs_manifest[i].url == config.feedback_link) {
-                    chrome.tabs.highlight({tabs: tabs_manifest[0].index});
+                    chrome.tabs.highlight({tabs: tabs_manifest[i].index});
                 }
             }
         }
         else {
             // go through the tabs_manifest to find the google_form
-            for (var i = 0; i < tabs_manifest.lenght; i++) {
+            for (var i = 0; i < tabs_manifest.length; i++) {
                 if (tabs_manifest[i].url == config.google_form) {
-                    chrome.tabs.highlight({tabs: tabs_manifest[1].index});
+                    chrome.tabs.highlight({tabs: tabs_manifest[i].index});
                 }
             }
         }
