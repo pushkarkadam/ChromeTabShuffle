@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(function() {
         }
 
         // Check the hour of the day
-        if (hour > START_TIME && hour < END_TIME) {
+        if (hour >= START_TIME && hour <= END_TIME) {
             // go through the tabs_manifest to find the feedback_link
             for (var i = 0; i < tabs_manifest.length; i++) {
                 if (tabs_manifest[i].url == config.feedback_link) {
