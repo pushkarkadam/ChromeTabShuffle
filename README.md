@@ -79,6 +79,19 @@ var config = {
 }
 ```
 
+Example in the `config.js` file in this project:
+
+```
+var config = {
+    "start_time": 5,
+    "end_time": 20,
+    "feedback_link": "https://example1.com/",
+    "google_form": "https://example2.com/"
+}
+```
+
+*NOTE: The above lines of code provides sample values. Actual information is stored in* `config.js` *file*.
+
 Use `var config = chrome.extension.getBackgroundPage().config;` to load the file.
 
 In `manifest.json`, make sure to add `config.js` in background script array before `background.js`
